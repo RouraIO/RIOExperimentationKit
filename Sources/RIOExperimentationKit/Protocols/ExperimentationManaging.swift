@@ -25,7 +25,6 @@ import Foundation
 ///     }
 /// }
 /// ```
-@MainActor
 public protocol ExperimentationManaging {
 
     /// Initializes the experimentation system and loads initial flag values.

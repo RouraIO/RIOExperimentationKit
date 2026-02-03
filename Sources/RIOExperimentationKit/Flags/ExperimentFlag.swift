@@ -47,7 +47,7 @@ import Foundation
 /// 3. Delete the flag from LaunchDarkly dashboard
 ///
 /// This keeps the flag list small and the codebase clean.
-public protocol ExperimentFlag: Sendable {
+nonisolated public protocol ExperimentFlag: Sendable {
     associatedtype Value: Sendable
 
     /// The key used in LaunchDarkly to identify this flag.
@@ -73,7 +73,7 @@ public protocol ExperimentFlag: Sendable {
 ///     applyDarkTheme()
 /// }
 /// ```
-public struct BoolFlag: ExperimentFlag {
+nonisolated public struct BoolFlag: ExperimentFlag {
     public let key: String
     public let defaultValue: Bool
     public let updatePolicy: UpdatePolicy
@@ -98,7 +98,7 @@ public struct BoolFlag: ExperimentFlag {
 ///
 /// let message = facade.value(for: Flags.welcomeMessage)
 /// ```
-public struct StringFlag: ExperimentFlag {
+nonisolated public struct StringFlag: ExperimentFlag {
     public let key: String
     public let defaultValue: String
     public let updatePolicy: UpdatePolicy
@@ -122,7 +122,7 @@ public struct StringFlag: ExperimentFlag {
 ///
 /// let threshold = facade.value(for: Flags.scrollThreshold)
 /// ```
-public struct DoubleFlag: ExperimentFlag {
+nonisolated public struct DoubleFlag: ExperimentFlag {
     public let key: String
     public let defaultValue: Double
     public let updatePolicy: UpdatePolicy
@@ -156,7 +156,7 @@ public struct DoubleFlag: ExperimentFlag {
 ///
 /// - Note: Returns `nil` if the flag is not found or fails to decode.
 ///   Use the `default` parameter to provide a fallback value.
-public struct JSONFlag<T: Codable & Sendable>: ExperimentFlag {
+nonisolated public struct JSONFlag<T: Codable & Sendable>: ExperimentFlag {
     public let key: String
     public let defaultValue: T?
     public let updatePolicy: UpdatePolicy
@@ -186,7 +186,7 @@ public struct JSONFlag<T: Codable & Sendable>: ExperimentFlag {
 ///     showCustomVariant(name)
 /// }
 /// ```
-public struct VariationFlag: ExperimentFlag {
+nonisolated public struct VariationFlag: ExperimentFlag {
 
     public let key: String
     public let defaultValue: VariationResult

@@ -10,7 +10,6 @@ import Observation
 
 // MARK: - ExperimentationFacade
 
-@MainActor
 @Observable
 public final class ExperimentationFacade {
 

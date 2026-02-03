@@ -27,7 +27,7 @@ import Foundation
 /// // Gradual rollout - apply after 5 minutes
 /// static let newHomeLayout = BoolFlag("newHomeLayout", policy: .delayed(seconds: 300))
 /// ```
-public enum UpdatePolicy: Equatable, Sendable {
+nonisolated public enum UpdatePolicy: Equatable, Sendable {
 
     /// Flag updates take effect immediately when received from LaunchDarkly.
     /// Use for critical flags like kill switches or maintenance mode.

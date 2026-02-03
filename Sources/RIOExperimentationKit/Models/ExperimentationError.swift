@@ -27,7 +27,7 @@ import Foundation
 ///     )
 /// }
 /// ```
-public enum ExperimentationError: LocalizedError, Equatable, Sendable {
+nonisolated public enum ExperimentationError: LocalizedError, Equatable, Sendable {
 
     /// The LaunchDarkly SDK failed to initialize.
     /// This typically occurs due to network issues or invalid API key.

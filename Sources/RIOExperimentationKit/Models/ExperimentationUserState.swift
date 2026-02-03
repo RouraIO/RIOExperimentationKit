@@ -27,7 +27,7 @@ import Foundation
 /// // User logs out
 /// await facade.handleUserStateChange(.loggedOut)
 /// ```
-public enum ExperimentationUserState: Equatable, Sendable {
+nonisolated public enum ExperimentationUserState: Equatable, Sendable {
 
     /// User is authenticated with a known user ID.
     /// Experiments will be consistent for this user across devices/sessions.

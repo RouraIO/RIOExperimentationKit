@@ -27,7 +27,7 @@ import Foundation
 ///     showCustomCheckout(name)
 /// }
 /// ```
-public enum VariationResult: Equatable, Sendable {
+nonisolated public enum VariationResult: Equatable, Sendable {
 
     /// The control group - users see the original/default experience.
     case control

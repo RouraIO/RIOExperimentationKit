@@ -18,7 +18,7 @@ import Foundation
 /// - Implementations must be thread-safe (use `actor`)
 /// - The `flagStream` should emit updates whenever flags change
 /// - Handle network errors gracefully and use cached values when offline
-public protocol ExperimentationClientProtocol: Sendable {
+nonisolated public protocol ExperimentationClientProtocol: Sendable {
 
     /// Initializes the client and establishes connection to LaunchDarkly.
     ///
@@ -79,7 +79,7 @@ public protocol ExperimentationClientProtocol: Sendable {
 // MARK: - FlagUpdate
 
 /// Represents a real-time flag update from LaunchDarkly.
-public struct FlagUpdate: Sendable {
+nonisolated public struct FlagUpdate: Sendable {
 
     /// The key of the flag that changed.
     public let key: String

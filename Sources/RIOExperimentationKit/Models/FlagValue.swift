@@ -13,7 +13,7 @@ import Foundation
 ///
 /// This struct tracks when a flag value was received from LaunchDarkly,
 /// enabling the delayed update policy to determine when to apply changes.
-public struct FlagValue: Sendable {
+nonisolated public struct FlagValue: Sendable {
 
     /// The raw value from LaunchDarkly, stored as an enum for type flexibility.
     public let rawValue: RawValue
@@ -53,7 +53,7 @@ public struct FlagValue: Sendable {
 public extension FlagValue {
 
     /// The underlying value types supported by LaunchDarkly.
-    enum RawValue: Sendable {
+    nonisolated enum RawValue: Sendable {
         case bool(Bool)
         case string(String)
         case double(Double)
