@@ -5,6 +5,14 @@ import PackageDescription
 
 let package = Package(
     name: "RIOExperimentationKit",
+    defaultLocalization: "en",
+    platforms: [
+        .iOS(.v18),
+        .macOS(.v15),
+        .tvOS(.v18),
+        .watchOS(.v11),
+        .visionOS(.v2)
+    ],
     products: [
         // Products define the executables and libraries a package produces, making them visible to other packages.
         .library(
@@ -22,5 +30,8 @@ let package = Package(
             name: "RIOExperimentationKitTests",
             dependencies: ["RIOExperimentationKit"]
         ),
+    ],
+    swiftLanguageModes: [
+        .v6
     ]
 )
